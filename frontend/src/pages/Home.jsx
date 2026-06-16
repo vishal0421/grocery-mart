@@ -6,6 +6,7 @@ import { categoryService } from '../services/categoryService';
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { getImageUrl } from '../utils/helpers';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -637,7 +638,7 @@ const Home = () => {
               >
                 <div className="hm-cat-img-wrap">
                   <img
-                    src={`http://localhost:5000/uploads/${category.image}`}
+                    src={getImageUrl(category.image)}
                     alt={category.name}
                   />
                 </div>

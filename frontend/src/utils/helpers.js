@@ -9,5 +9,6 @@ export const formatPrice = (price) => {
 export const getImageUrl = (filename) => {
   if (!filename) return '/placeholder.jpg';
   if (filename.startsWith('http')) return filename;
-  return `http://localhost:5000/uploads/${filename}`;
+  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  return `${baseUrl}/uploads/${filename}`;
 };
